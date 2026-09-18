@@ -6,6 +6,17 @@
   --muted: #85827b;
   --line: rgba(242, 239, 232, 0.13);
   --accent: #f5a623;
+  --accent-soft: rgba(245, 166, 35, 0.1);
+
+  /* Typography scale */
+  --font-size-hero: clamp(3.5rem, 8vw, 8.5rem);
+  --font-size-section: clamp(2.5rem, 5vw, 4.5rem);
+  --font-size-body: 1rem;
+  --font-size-label: 0.625rem;
+
+  /* Spacing scale */
+  --space-section: clamp(4rem, 10vw, 9rem);
+  --space-card: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 * {
@@ -24,16 +35,8 @@ body {
     var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  pointer-events: none;
-  content: "";
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  font-size: var(--font-size-body);
+  line-height: 1.6;
 }
 
 ::selection {
@@ -45,6 +48,7 @@ a {
   text-decoration: none;
 }
 
+/* Design system primitives */
 .site-grid {
   background-image:
     linear-gradient(to right, rgba(242, 239, 232, 0.045) 1px, transparent 1px),
@@ -58,11 +62,60 @@ a {
 
 .eyebrow {
   color: var(--accent);
-  font-size: 10px;
+  font-size: var(--font-size-label);
   letter-spacing: 0.28em;
   text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
 }
 
 .mono {
   font-family: "Courier New", monospace;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: rgba(242, 239, 232, 0.02);
+  padding: var(--space-card);
+}
+
+.card {
+  border-radius: 0;
+  background: #0b0b0b;
+  padding: var(--space-card);
+}
+
+.font-script {
+  font-family: var(--font-caveat), cursive;
+}
+
+.gta-title-shadow {
+  text-shadow: 3px 4px 14px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.gta-neon-pink {
+  text-shadow: 0 0 12px rgba(255, 42, 133, 0.8), 0 0 30px rgba(255, 42, 133, 0.5);
+}
+
+.gta-neon-amber {
+  text-shadow: 0 0 12px rgba(245, 166, 35, 0.8), 0 0 30px rgba(245, 166, 35, 0.5);
+}
+
+.gta-cash-shadow {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.95);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

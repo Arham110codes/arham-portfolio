@@ -2,18 +2,17 @@
 # PLAN.md
 
 ## Current Status
-- [x] Windows environment verified
 - [x] Next.js project created
 - [x] Git initialized
 - [x] 3D dependencies installed
 - [x] Portfolio identity locked
-- [ ] Design system implemented
-- [ ] Homepage implemented
-- [ ] Project data added
-- [ ] Cinematic project scenes added
+- [x] Project data added
+- [x] Production build
+- [ ] Design system
+- [ ] Homepage redesign
+- [ ] Cinematic project scenes
 - [ ] Responsive/mobile pass
 - [ ] Accessibility pass
-- [ ] Production build
 - [ ] Vercel deployment
 
 ## Build Order
